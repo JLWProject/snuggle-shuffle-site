@@ -89,6 +89,30 @@ p, li { color: var(--text); }
 }
 .button:hover { color: #fff; filter: brightness(1.05); }
 
+/* Swipeable row of screenshots; snaps one image at a time on phones. */
+.gallery {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 2px 16px;
+  margin: 24px 0 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery img {
+  flex: 0 0 auto;
+  width: 200px;
+  height: auto;
+  border-radius: 18px;
+  scroll-snap-align: start;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 720px) {
+  .gallery img { width: 210px; }
+}
+
 footer {
   margin-top: 48px;
   padding-top: 16px;
